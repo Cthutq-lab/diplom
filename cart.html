@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="🛒 Оформление заказа в цветочном магазине 'Нежный Букет'. Безопасная оплата картой, наличными или онлайн. Быстрая доставка по вашему адресу.">
+<meta name="keywords" content="оформить заказ цветов, доставка цветов оплата, купить букет с доставкой, оплата картой цветы, заказ цветов онлайн">
+    <title>Корзина - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Нежный Букет</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link">Вход</a>
+                        <a href="register.html" class="register-link">Регистрация</a>
+                        <a href="profile.html" class="profile-link hidden">Профиль</a>
+                        <a href="#" class="logout-link hidden">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link hidden">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cart">
+            <div class="container">
+                <h1>Ваша корзина</h1>
+                <!-- Добавить в cart.html после <h1>Ваша корзина</h1> -->
+<div class="cart-actions">
+    <button id="clear-cart" class="btn btn-danger">Очистить корзину</button>
+</div>
+<div class="cart-items" id="cart-items">
+    <!-- Товары в корзине будут загружены через JS -->
+    <p class="empty-cart">Ваша корзина пуста</p>
+</div>
+                
+                <div class="cart-summary">
+                    <div class="summary-details">
+                        <h3>Итого:</h3>
+                        <p>Товаров: <span id="total-items">0</span></p>
+                        <p>Сумма: <span id="total-price">0</span> руб.</p>
+                    </div>
+                    
+                    <form id="checkout-form" class="checkout-form">
+                        <h3>Оформление заказа</h3>
+                        <input type="text" id="name" placeholder="Ваше имя" required>
+                        <input type="tel" id="phone" placeholder="Телефон" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <textarea id="address" placeholder="Адрес доставки" required></textarea>
+                        <textarea id="comment" placeholder="Комментарий к заказу"></textarea>
+                        <div class="payment-methods">
+  <h3>Способ оплаты</h3>
+  
+  <div class="payment-options">
+    <!-- Наличными при получении -->
+    <label class="payment-option">
+      <input type="radio" name="payment" value="cash" checked>
+      <div class="payment-card">
+        <div class="payment-icon">💵</div>
+        <div class="payment-info">
+          <h4>Наличными при получении</h4>
+          <p>Оплата курьеру при доставке</p>
+        </div>
+      </div>
+    </label>
+    
+    <!-- Банковской картой онлайн -->
+    <label class="payment-option">
+      <input type="radio" name="payment" value="card">
+      <div class="payment-card">
+        <div class="payment-icon">💳</div>
+        <div class="payment-info">
+          <h4>Банковской картой</h4>
+          <p>Visa, Mastercard, Мир</p>
+          <div class="card-icons">
+            
+          </div>
+        </div>
+      </div>
+    </label>
+    
+    <!-- ЮMoney -->
+    <label class="payment-option">
+      <input type="radio" name="payment" value="yoomoney">
+      <div class="payment-card">
+        <div class="payment-icon"><img src="img/0.jpg" alt="ЮMoney"></div>
+        <div class="payment-info">
+          <h4>ЮMoney</h4>
+          <p>Оплата через кошелек ЮMoney</p>
+        </div>
+      </div>
+    </label>
+    
+    <!-- СБП (Система быстрых платежей) -->
+    <label class="payment-option">
+      <input type="radio" name="payment" value="sbp">
+      <div class="payment-card">
+        <div class="payment-icon"><img src="img/1.jpg" alt="СБП"></div>
+        <div class="payment-info">
+          <h4>СБП</h4>
+          <p>Оплата по номеру телефона</p>
+        </div>
+      </div>
+    </label>
+  </div>
+  
+  <!-- Поле для ввода данных карты (появляется при выборе карты) -->
+  <div class="card-details" id="card-details">
+    <div class="form-group">
+      <label for="card-number">Номер карты</label>
+      <input type="text" id="card-number" placeholder="0000 0000 0000 0000" data-mask="0000 0000 0000 0000">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="card-expiry">Срок действия</label>
+        <input type="text" id="card-expiry" placeholder="MM/ГГ" data-mask="00/00">
+      </div>
+      <div class="form-group">
+        <label for="card-cvc">CVC/CVV</label>
+        <input type="text" id="card-cvc" placeholder="000" data-mask="000">
+      </div>
+    </div>
+  </div>
+</div>
+                        <button type="submit" class="btn">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@nezniy-buket.ru</p>
+                    <p>Адрес: г. Москва, ул. Цветочная, 12</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <!-- Добавить в checkout-form перед кнопкой -->
+<div class="payment-method">
+    <h3>Способ оплаты</h3>
+    <select id="payment-method" required>
+        <option value="">Выберите способ оплаты</option>
+        <option value="card">Банковская карта</option>
+        <option value="yoomoney">ЮMoney</option>
+        <option value="sbp">Система быстрых платежей</option>
+        <option value="cash">Наличные при получении</option>
+    </select>
+</div>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Нежный Букет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    
+</body>
+</html>

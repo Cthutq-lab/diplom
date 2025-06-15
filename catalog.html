@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="📚 Каталог свежих цветов - более 100 видов букетов. Розы от 990₽, тюльпаны от 790₽, лилии от 1290₽. Свадебные и праздничные композиции. Доставка сегодня!">
+<meta name="keywords" content="каталог цветов, купить розы, цена на тюльпаны, лилии недорого, свадебные букеты, цветы по акции, свежие цветы в наличии, сезонные букеты">
+    <title>Каталог - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Нежный Букет</div>
+            <!-- Добавить в header после логотипа -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Поиск цветов...">
+    <button id="search-btn">Найти</button>
+</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link">Вход</a>
+                        <a href="register.html" class="register-link">Регистрация</a>
+                        <a href="profile.html" class="profile-link hidden">Профиль</a>
+                        <a href="#" class="logout-link hidden">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link hidden">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="catalog">
+            <div class="container">
+                <h1>Каталог цветов</h1>
+                <div class="filter">
+                    <select id="category-filter">
+                        <option value="all">Все категории</option>
+                        <option value="roses">Розы</option>
+                        <option value="tulips">Боксы</option>
+                        <option value="lilies">Лилии</option>
+                        <option value="mixed">Смешанные букеты</option>
+                        <option value="wedding">Пионы</option>
+                        <option value="chrysanthemums">Хризантема</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="all">Любая цена</option>
+                        <option value="0-2000">До 2000 руб.</option>
+                        <option value="2000-5000">2000-5000 руб.</option>
+                        <option value="5000+">От 5000 руб.</option>
+                    </select>
+                </div>
+                <div class="products-grid" id="catalog-products">
+                    <!-- Товары будут загружены через JS -->
+                </div>
+                <div class="pagination" id="pagination">
+    <!-- Кнопки пагинации будут добавлены через JS -->
+</div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@nezniy-buket.ru</p>
+                    <p>Адрес: г. Москва, ул. Цветочная, 12</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Нежный Букет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+    
+</body>
+</html>

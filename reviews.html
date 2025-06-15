@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="⭐ Реальные отзывы о цветочном магазине 'Нежный Букет'. Более 500 довольных клиентов. Оставьте свой отзыв о качестве наших букетов и доставки!">
+<meta name="keywords" content="отзывы цветочный магазин, нежный букет отзывы, качество цветов отзывы, доставка цветов отзывы, свежие цветы отзывы">
+    <title>Отзывы - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <header>
+        <div class="container">
+            <div class="logo">Нежный Букет</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link">Вход</a>
+                        <a href="register.html" class="register-link">Регистрация</a>
+                        <a href="profile.html" class="profile-link hidden">Профиль</a>
+                        <a href="#" class="logout-link hidden">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link hidden">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="all-reviews">
+            <div class="container">
+                <h1>Отзывы наших клиентов</h1>
+                
+                <div class="reviews-controls" >
+                    <div class="reviews-sort" >
+                        <span>Сортировать:</span>
+                        <select id="reviews-sort">
+                            <option value="date-desc">По дате (новые)</option>
+                            <option value="date-asc">По дате (старые)</option>
+                            <option value="rating-desc">По рейтингу (высокий)</option>
+                            <option value="rating-asc">По рейтингу (низкий)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="reviews-grid" id="reviews-grid"></div>
+                
+                <div class="reviews-pagination" id="reviews-pagination"></div>
+                
+                <!-- Форма добавления отзыва (только для авторизованных) -->
+                <div class="add-review" id="add-review-container">
+                    <h3>Оставить отзыв</h3>
+                    <form id="review-form" enctype="multipart/form-data">
+                        <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
+                        
+                        <div class="rating">
+                            <span>Оценка:</span>
+                            <div class="stars">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Отправить отзыв</button>
+                    </form>
+                </div>
+                
+                <div class="login-prompt" id="login-prompt">
+                    <p>Чтобы оставить отзыв, пожалуйста <a href="login.html">войдите</a> или <a href="register.html">зарегистрируйтесь</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Вставьте стандартный footer из других страниц -->
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/reviews.js"></script>
+    
+</body>
+</html>

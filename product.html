@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Товар - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Нежный Букет</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link">Вход</a>
+                        <a href="register.html" class="register-link">Регистрация</a>
+                        <a href="profile.html" class="profile-link hidden">Профиль</a>
+                        <a href="#" class="logout-link hidden">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link hidden">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="container">
+                <div class="product-container" id="product-container">
+                    <!-- Товар будет загружен через JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@nezniy-buket.ru</p>
+                    <p>Адрес: г. Москва, ул. Цветочная, 12</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Нежный Букет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

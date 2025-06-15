@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Профиль - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Нежный Букет</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link hidden">Вход</a>
+                        <a href="register.html" class="register-link hidden">Регистрация</a>
+                        <a href="profile.html" class="profile-link">Профиль</a>
+                        <a href="#" class="logout-link">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link hidden">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="container">
+                <h1>Ваш профиль</h1>
+                <div class="profile-content">
+                    <div class="profile-info">
+                        <h2>Личные данные</h2>
+                        <div class="info-item">
+                            <span class="info-label">Имя:</span>
+                            <span id="profile-name">Иван Иванов</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span id="profile-email">ivan@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Телефон:</span>
+                            <span id="profile-phone">+7 (123) 456-78-90</span>
+                        </div>
+                        <button id="edit-profile" class="btn">Редактировать профиль</button>
+                    </div>
+                    <div class="profile-orders">
+                        <h2>История заказов</h2>
+                        <div class="orders-list" id="orders-list">
+                            <!-- Заказы будут загружены через JS -->
+                            <p class="no-orders">У вас пока нет заказов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@nezniy-buket.ru</p>
+                    <p>Адрес: г. Москва, ул. Цветочная, 12</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Нежный Букет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    
+</body>
+</html>

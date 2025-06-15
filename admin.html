@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Админ панель - Нежный Букет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><a href="index.html"></a>Нежный Букет</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="cart.html">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="login.html" class="login-link hidden">Вход</a>
+                        <a href="register.html" class="register-link hidden">Регистрация</a>
+                        <a href="profile.html" class="profile-link">Профиль</a>
+                        <a href="#" class="logout-link">Выход</a>
+                    </li>
+                    <li><a href="admin.html" class="admin-link">Админ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="admin-panel">
+            <div class="container">
+                <h1>Админ панель</h1>
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="products">Товары</button>
+                    <button class="tab-btn" data-tab="orders">Заказы</button>
+                    <button class="tab-btn" data-tab="users">Пользователи</button>
+                </div>
+                
+                <div class="tab-content active" id="products-tab">
+                    <h2>Управление товарами</h2>
+                    <button id="add-product-btn" class="btn">Добавить товар</button>
+                    <div class="admin-products-grid" id="admin-products">
+                        <!-- Товары будут загружены через JS -->
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="orders-tab">
+                    <h2>Заказы</h2>
+                    <div class="admin-orders-list" id="admin-orders">
+                        <!-- Заказы будут загружены через JS -->
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="users-tab">
+                    <h2>Пользователи</h2>
+                    <div class="admin-users-list" id="admin-users">
+                        <!-- Пользователи будут загружены через JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для добавления/редактирования товара -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Добавить товар</h2>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <div class="form-group">
+                    <label for="product-name">Название</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Категория</label>
+                    <select id="product-category" required>
+                        <option value="roses">Розы</option>
+                        <option value="tulips">Тюльпаны</option>
+                        <option value="lilies">Лилии</option>
+                        <option value="mixed">Смешанные букеты</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Цена (руб.)</label>
+                    <input type="number" id="product-price" min="0" step="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Описание</label>
+                    <textarea id="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Изображение (URL)</label>
+                    <input type="text" id="product-image" required>
+                </div>
+                <button type="submit" class="btn">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@nezniy-buket.ru</p>
+                    <p>Адрес: г. Москва, ул. Цветочная, 12</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form id="feedback-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш email" required>
+                        <textarea placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Нежный Букет. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    
+</body>
+</html>
